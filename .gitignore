@@ -1,0 +1,151 @@
+# .gitignore for the cna-py project
+
+# --- Python ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually these files are written by a python script from a template
+# before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Type checker caches
+.mypy_cache/
+.pyre/
+.pytype/
+
+# --- Virtual Environments ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Poetry ---
+# poetry.lock should generally be committed unless you are creating a library
+# intended to be used by others where dependency flexibility is key.
+# For an application or a specific research tool, committing it ensures
+// # reproducible environments. Let's assume reproducibility is desired here.
+# poetry.lock
+
+# Poetry caches (though usually managed globally or outside the project dir)
+.poetry/cache/
+
+# --- Sphinx documentation ---
+docs/_build/
+# If docs were top-level instead of src/cna/docs:
+# _build/
+
+# --- IDE / Editor Files ---
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*~
+*.swo # Swap file for Vim
+
+# Emacs
+*#
+#*#
+
+# --- Operating System Files ---
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Project Specific (cna-py) ---
+# Output directory specified in the plan. Ignore by default during development.
+# If specific example results need to be committed, place them elsewhere
+# (e.g., examples/) or explicitly add them using `git add -f`.
+results/
+
+# Log files (if any generated during development/runs)
+*.log
+logs/
+
+# Temporary files
+*.tmp
+
+# --- Secrets ---
+# Ignore environment files - use .env.example for templates
+*.env
+.env.*
+!*.env.example
+
+# Ignore credentials files if any are used locally
+credentials.*
+secrets.*
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- Miscellaneous ---
+# Ignore local settings overrides if used
+local_settings.py

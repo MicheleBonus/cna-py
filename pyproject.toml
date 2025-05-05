@@ -1,0 +1,62 @@
+# pyproject.toml
+
+[tool.poetry]
+name = "cna-py"
+version = "0.1.0"
+description = "Modernized Python implementation of Constraint Network Analysis (CNA) for biomolecular flexibility and rigidity analysis."
+authors = [
+    {name = "Michele Bonus", email = "Michele.Bonus@hhu.de"},
+    {name = "Filip König", email = "Filip.Koenig@hhu,de"},
+    {name = "Jonas Thelen", email = "Jonas.Thelen@hhu.de"},
+    {name = "Holger Gohlke", email = "Gohlke@hhu.de"}
+]
+license = "MIT"
+readme = "README.md"
+homepage = "https://cpclab.uni-duesseldorf.de/index.php/Software"  # Placeholder URL
+repository = "https://github.com/MicheleBonus/cpclab_notebooks/cna-py/"  # Placeholder URL
+documentation = "https://placeholder.example.com/cna-py/docs"  # Placeholder URL
+
+# Classifiers help users find your project
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License", # Match license field
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Keywords for PyPI search
+keywords = ["bioinformatics", "structural biology", "constraint network analysis", "rigidity", "flexibility", "protein", "biotite"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+biotite = "^0.38"   # Core structure handling and analysis library
+numpy = "^2.2.5"     # Fundamental numerical operations
+scipy = "^1.15.2"     # Scientific computing, sparse matrices, spatial queries
+pandas = "^2.2.3"     # Recommended for data handling (results, trajectories)
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"                 # Testing framework
+sphinx = "^8.2"                 # Documentation generator
+sphinxcontrib-napoleon = "^0.9" # For NumPy/Google style docstrings in Sphinx
+black = "^25.1"                 # Code formatter
+ruff = "^0.11.8"                 # Fast linter
+
+# Optional dependencies (e.g., for visualization)
+[tool.poetry.extras]
+vis = ["matplotlib>=3.10"]  # Example for optional visualization dependency
+
+# Command-line script definition
+[tool.poetry.scripts]
+cna-run = "cna.cli:main"  # Points to the main function in src/cna/cli.py
+
+# Build system configuration specifying Poetry as the backend
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
